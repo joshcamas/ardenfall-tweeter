@@ -4,11 +4,16 @@ var TwitterBot = require("node-twitterbot").TwitterBot;
 var TWITTER_SEARCH_PHRASE = '#ardenfall';
 var TWITTER_USERS = ['716027329621798914']
 
+var BOT_CONSUMER_KEY = process.env.BOT_CONSUMER_KEY;
+var BOT_CONSUMER_SECRET = process.env.BOT_CONSUMER_SECRET;
+var BOT_ACCESS_TOKEN = process.env.BOT_ACCESS_TOKEN;
+var BOT_ACCESS_TOKEN_SECRET = process.env.BOT_ACCESS_TOKEN_SECRET;
+
 var Bot = new Twit({
- consumer_key: process.env.BOT_CONSUMER_KEY,
- consumer_secret: process.env.BOT_CONSUMER_SECRET,
- access_token: process.env.BOT_ACCESS_TOKEN,
- access_token_secret: process.env.BOT_ACCESS_TOKEN_SECRET
+ consumer_key: BOT_CONSUMER_KEY,
+ consumer_secret: BOT_CONSUMER_SECRET,
+ access_token: BOT_ACCESS_TOKEN,
+ access_token_secret: BOT_ACCESS_TOKEN_SECRET
 });
 
 console.log('The bot is running...');
@@ -19,6 +24,13 @@ function RetweetStatus(status,onComplete)
 	var id = {
 		id : status.id_str
 	}
+	
+	//Check if status has already been favorited or retweeted
+	if(status.favorited || status.retweeted) {
+		onComplete(false);
+		return;
+	}
+		
 	
 	console.log(status.text)
 	
