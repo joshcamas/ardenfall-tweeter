@@ -1,0 +1,23 @@
+{
+  "name": "ardenfall-tweeter",
+  "version": "1.0.0",
+  "description": "simple twitter bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshcamas/ardenfall-tweeter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshcamas/ardenfall-tweeter/issues"
+  },
+  "homepage": "https://github.com/joshcamas/ardenfall-tweeter#readme",
+  "dependencies": {
+    "node-twitterbot": "^0.2.2",
+    "twit": "^2.2.11"
+  }
+}
