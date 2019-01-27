@@ -2,7 +2,7 @@ var Twit = require("twit");
 var TwitterBot = require("node-twitterbot").TwitterBot;
 
 var TWITTER_SEARCH_PHRASE = '#ardenfall';
-var TWITTER_USERS = ['716027329621798914']
+var TWITTER_USERS = ['716027329621798914','1074102160835530752']
 
 var BOT_CONSUMER_KEY = process.env.BOT_CONSUMER_KEY;
 var BOT_CONSUMER_SECRET = process.env.BOT_CONSUMER_SECRET;
