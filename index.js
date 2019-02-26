@@ -96,7 +96,7 @@ function BotInit() {
 				//Filter user 
 				if(!TWITTER_USERS.includes(status.user.id_str)) {
 					console.log("Bad user " + status.user.id_str);
-					ScanTweet(index+1);
+					return;
 				}
 
 				function OnTweetComplete(success) {
